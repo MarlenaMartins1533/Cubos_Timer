@@ -28,10 +28,11 @@ class StopWatchFragment: Fragment() {
 
     private fun initListener(){
         var isRunning = false
-        chronometer.base = SystemClock.elapsedRealtime()
+        var pause = 0L
 
         startBTN.setOnClickListener {
             if (!isRunning) {
+                    chronometer.base = SystemClock.elapsedRealtime() - pause
                     chronometer.start()
                     isRunning = true
                 }
@@ -39,11 +40,13 @@ class StopWatchFragment: Fragment() {
         resetBTN.setOnClickListener {
             chronometer.stop()
             chronometer.base = SystemClock.elapsedRealtime()
+            pause = 0
             isRunning = false
         }
 
         stopBTN.setOnClickListener {
             chronometer.stop()
+            pause = SystemClock.elapsedRealtime() - chronometer.base
             isRunning = false
         }
     }

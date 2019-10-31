@@ -7,4 +7,5 @@
     <string name="stop_watch_param">Stopwatch</string>
     <string name="timer_param">Timer</string>
     <string name="reset">Reset</string>
+    <string name="tip">Digite aqui o tempo em seg</string>
 </resources>

@@ -1,20 +1,18 @@
 package com.marlena.cubos_timer.scenes.timer
 
 import android.annotation.SuppressLint
-import android.os.Build
 import android.os.Bundle
 import android.os.SystemClock
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.annotation.RequiresApi
 import com.marlena.cubos_timer.R
 import kotlinx.android.synthetic.main.fragment_count_down.*
 import kotlinx.android.synthetic.main.fragment_timer.chronometer
 import kotlinx.android.synthetic.main.fragment_timer.startBTN
 
-class CountDownFragment: Fragment(){
+class CountDownFragment : Fragment() {
 
     private var isRunning = false
 
@@ -32,13 +30,14 @@ class CountDownFragment: Fragment(){
 
     @SuppressLint("NewApi")
     private fun initListener() {
-        val startCountDown: Int = 60000 //timeEDT.text.toString().toInt()
+        var startCountDown: Int
 
         startBTN.setOnClickListener {
             when (isRunning) {
                 false -> {
-                    chronometer.isCountDown = true
+                    startCountDown = getConvertedTime()
                     chronometer.base = SystemClock.elapsedRealtime() + startCountDown
+                    chronometer.isCountDown = true
                     chronometer.start()
                     startBTN.setText(R.string.stop)
                     isRunning = true
@@ -50,6 +49,17 @@ class CountDownFragment: Fragment(){
                 }
             }
         }
+    }
+
+    private fun getConvertedTime(): Int {
+        return (getValueTimeEDT()*1000)
+    }
+
+    private fun getValueTimeEDT(): Int {
+
+        var timeString = timeEDT?.text?.toString()
+        if (timeString.isNullOrEmpty()) timeString = "59"
+        return timeString.toInt()
     }
 
     companion object {

@@ -5,6 +5,7 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import com.marlena.cubos_timer.scenes.timer.CountDownFragment
 import com.marlena.cubos_timer.scenes.timer.StopWatchFragment
+import com.marlena.cubos_timer.scenes.timer.TimeZoneFragment
 import com.marlena.cubos_timer.scenes.timer.TimerFragment
 
 class MainPagerAdapter(fm: FragmentManager):
@@ -17,9 +18,11 @@ class MainPagerAdapter(fm: FragmentManager):
         titleList.add("Timer")
         titleList.add("Stopwatch")
         titleList.add("CountDown")
+        titleList.add("Timezone")
         fragmentList.add(TimerFragment.newInstance())
         fragmentList.add(StopWatchFragment.newInstance())
         fragmentList.add(CountDownFragment.newInstance())
+        fragmentList.add(TimeZoneFragment.newInstance())
     }
 
     override fun getItem(position: Int): Fragment = fragmentList[position]

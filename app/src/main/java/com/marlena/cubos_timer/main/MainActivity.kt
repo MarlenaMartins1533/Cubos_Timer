@@ -1,9 +1,9 @@
-package com.marlena.cubos_timer.scenes.main
+package com.marlena.cubos_timer.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.marlena.cubos_timer.R
-import com.marlena.cubos_timer.adapter.MainPagerAdapter
+import com.marlena.cubos_timer.scenes.adapter.MainPagerAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {

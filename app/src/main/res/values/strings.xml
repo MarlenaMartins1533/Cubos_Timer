@@ -9,4 +9,5 @@
     <string name="reset">Reset</string>
     <string name="tip">Digite o tempo em seg</string>
     <string name="add_more">Adicionar Mais</string>
+    <string name="error_get_timezones">Não foi possível pegar a lista de Times</string>
 </resources>

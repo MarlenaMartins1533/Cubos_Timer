@@ -7,14 +7,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".scenes.timer.TimeZoneFragment"
+    tools:context=".scenes.view.TimezoneFragment"
     android:background="@color/colorBlack">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:listitem="@layout/fragment_time_zone"
+        tools:listitem="@layout/fragment_timezone"
         tools:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:spanCount="3"/>
 

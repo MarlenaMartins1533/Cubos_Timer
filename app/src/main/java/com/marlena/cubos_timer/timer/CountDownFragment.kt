@@ -1,4 +1,4 @@
-package com.marlena.cubos_timer.scenes.timer
+package com.marlena.cubos_timer.timer
 
 import android.annotation.SuppressLint
 import android.os.Bundle
